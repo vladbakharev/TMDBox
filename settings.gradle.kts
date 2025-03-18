@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Shutterfly TMDB"
+rootProject.name = "TMDBox"
 include(":app")

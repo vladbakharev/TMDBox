@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.vladbakharev.shutterflytmdb"
+    namespace = "com.vladbakharev.tmdbox"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.vladbakharev.shutterflytmdb"
+        applicationId = "com.vladbakharev.tmdbox"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

@@ -1,8 +1,8 @@
-package com.vladbakharev.shutterflytmdb.retrofit
+package com.vladbakharev.tmdbox.retrofit
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vladbakharev.shutterflytmdb.BuildConfig
+import com.vladbakharev.tmdbox.BuildConfig
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb
+package com.vladbakharev.tmdbox
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -58,16 +58,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.vladbakharev.shutterflytmdb.navigation.NavBar
-import com.vladbakharev.shutterflytmdb.navigation.Screen
-import com.vladbakharev.shutterflytmdb.retrofit.Genre
-import com.vladbakharev.shutterflytmdb.retrofit.Images
-import com.vladbakharev.shutterflytmdb.retrofit.Movie
-import com.vladbakharev.shutterflytmdb.retrofit.MoviesViewModel
-import com.vladbakharev.shutterflytmdb.ui.theme.DarkBlue
-import com.vladbakharev.shutterflytmdb.ui.theme.LightBlue
-import com.vladbakharev.shutterflytmdb.ui.theme.LightGreen
-import com.vladbakharev.shutterflytmdb.ui.theme.ShutterflyTMDBTheme
+import com.vladbakharev.tmdbox.navigation.NavBar
+import com.vladbakharev.tmdbox.navigation.Screen
+import com.vladbakharev.tmdbox.retrofit.Genre
+import com.vladbakharev.tmdbox.retrofit.Images
+import com.vladbakharev.tmdbox.retrofit.Movie
+import com.vladbakharev.tmdbox.retrofit.MoviesViewModel
+import com.vladbakharev.tmdbox.ui.theme.DarkBlue
+import com.vladbakharev.tmdbox.ui.theme.LightBlue
+import com.vladbakharev.tmdbox.ui.theme.LightGreen
+import com.vladbakharev.tmdbox.ui.theme.TMDBoxTheme
 import kotlinx.coroutines.flow.map
 
 //Brushes
@@ -335,7 +335,7 @@ fun GenresTab(
 @Preview(showBackground = true)
 @Composable
 fun MainTopAppBarPreview() {
-    ShutterflyTMDBTheme {
+    TMDBoxTheme {
         MainTopAppBar(
             topAppBarTitle = stringResource(R.string.genres)
         )
@@ -345,7 +345,7 @@ fun MainTopAppBarPreview() {
 @Preview(showBackground = true)
 @Composable
 fun MainBottomAppBarPreview() {
-    ShutterflyTMDBTheme {
+    TMDBoxTheme {
         MainBottomAppBar(navController = NavController(MainActivity()))
     }
 }
@@ -384,7 +384,7 @@ fun MoviesGridPreview() {
 @Preview(showBackground = true)
 @Composable
 fun GenresTabPreview() {
-    ShutterflyTMDBTheme {
+    TMDBoxTheme {
         GenresTab(
             genres = listOf(
                 Genre(1, "Action"),

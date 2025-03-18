@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.screens
+package com.vladbakharev.tmdbox.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -37,9 +37,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
-import com.vladbakharev.shutterflytmdb.R
-import com.vladbakharev.shutterflytmdb.backgroundBrush
-import com.vladbakharev.shutterflytmdb.retrofit.MoviesViewModel
+import com.vladbakharev.tmdbox.R
+import com.vladbakharev.tmdbox.backgroundBrush
+import com.vladbakharev.tmdbox.retrofit.MoviesViewModel
 import kotlin.math.roundToInt
 
 @Composable

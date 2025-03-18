@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.navigation
+package com.vladbakharev.tmdbox.navigation
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")

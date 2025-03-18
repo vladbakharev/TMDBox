@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb
+package com.vladbakharev.tmdbox
 
 import org.junit.Test
 

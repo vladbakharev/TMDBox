@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.screens
+package com.vladbakharev.tmdbox.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -12,13 +12,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.vladbakharev.shutterflytmdb.GenresTab
-import com.vladbakharev.shutterflytmdb.MainBottomAppBar
-import com.vladbakharev.shutterflytmdb.MainTopAppBar
-import com.vladbakharev.shutterflytmdb.MoviesGrid
-import com.vladbakharev.shutterflytmdb.R
-import com.vladbakharev.shutterflytmdb.backgroundBrush
-import com.vladbakharev.shutterflytmdb.retrofit.MoviesViewModel
+import com.vladbakharev.tmdbox.GenresTab
+import com.vladbakharev.tmdbox.MainBottomAppBar
+import com.vladbakharev.tmdbox.MainTopAppBar
+import com.vladbakharev.tmdbox.MoviesGrid
+import com.vladbakharev.tmdbox.R
+import com.vladbakharev.tmdbox.backgroundBrush
+import com.vladbakharev.tmdbox.retrofit.MoviesViewModel
 
 @Composable
 fun GenresScreen(

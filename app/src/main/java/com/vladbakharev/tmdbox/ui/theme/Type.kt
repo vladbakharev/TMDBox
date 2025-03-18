@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.ui.theme
+package com.vladbakharev.tmdbox.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

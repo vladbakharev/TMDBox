@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.ui.theme
+package com.vladbakharev.tmdbox.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

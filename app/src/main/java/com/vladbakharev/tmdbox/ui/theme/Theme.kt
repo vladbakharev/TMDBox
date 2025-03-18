@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.ui.theme
+package com.vladbakharev.tmdbox.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -30,7 +30,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun ShutterflyTMDBTheme(
+fun TMDBoxTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = DarkColorScheme

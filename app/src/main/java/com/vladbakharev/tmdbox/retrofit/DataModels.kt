@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.retrofit
+package com.vladbakharev.tmdbox.retrofit
 
 //Genres
 data class GenreResponse(val genres: List<Genre>)

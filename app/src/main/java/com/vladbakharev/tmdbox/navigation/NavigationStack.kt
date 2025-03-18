@@ -1,4 +1,4 @@
-package com.vladbakharev.shutterflytmdb.navigation
+package com.vladbakharev.tmdbox.navigation
 
 import androidx.compose.animation.fadeIn
 import androidx.compose.runtime.Composable
@@ -8,10 +8,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.vladbakharev.shutterflytmdb.retrofit.MoviesViewModel
-import com.vladbakharev.shutterflytmdb.screens.GenresScreen
-import com.vladbakharev.shutterflytmdb.screens.HomeScreen
-import com.vladbakharev.shutterflytmdb.screens.MovieScreen
+import com.vladbakharev.tmdbox.retrofit.MoviesViewModel
+import com.vladbakharev.tmdbox.screens.GenresScreen
+import com.vladbakharev.tmdbox.screens.HomeScreen
+import com.vladbakharev.tmdbox.screens.MovieScreen
 
 
 @Composable

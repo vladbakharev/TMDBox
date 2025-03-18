@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shutterfly TMDB</string>
+    <string name="app_name">TMDBox</string>
     <string name="home">Home</string>
     <string name="genres">Genres</string>
     <string name="no_overview">No overview</string>

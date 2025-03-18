@@ -1,30 +1,23 @@
-package com.vladbakharev.shutterflytmdb.screens
+package com.vladbakharev.tmdbox.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.vladbakharev.shutterflytmdb.MainActivity
-import com.vladbakharev.shutterflytmdb.MainBottomAppBar
-import com.vladbakharev.shutterflytmdb.MainTopAppBar
-import com.vladbakharev.shutterflytmdb.R
-import com.vladbakharev.shutterflytmdb.backgroundBrush
-import com.vladbakharev.shutterflytmdb.ui.theme.ShutterflyTMDBTheme
+import com.vladbakharev.tmdbox.MainActivity
+import com.vladbakharev.tmdbox.MainBottomAppBar
+import com.vladbakharev.tmdbox.MainTopAppBar
+import com.vladbakharev.tmdbox.R
+import com.vladbakharev.tmdbox.backgroundBrush
+import com.vladbakharev.tmdbox.ui.theme.TMDBoxTheme
 
 @Composable
 fun HomeScreen(
@@ -45,16 +38,6 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Surface(
-                modifier = modifier
-                    .padding(16.dp),
-                shape = RoundedCornerShape(16.dp)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.shutterfly_logo),
-                    contentDescription = null
-                )
-            }
         }
     }
 }
@@ -65,7 +48,7 @@ fun HomeScreen(
 )
 @Composable
 fun HomeScreenPreview() {
-    ShutterflyTMDBTheme {
+    TMDBoxTheme {
         HomeScreen(navController = NavController(MainActivity()))
     }
 }
