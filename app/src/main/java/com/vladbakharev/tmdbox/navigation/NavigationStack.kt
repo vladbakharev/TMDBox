@@ -1,6 +1,7 @@
 package com.vladbakharev.tmdbox.navigation
 
 import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
@@ -13,7 +14,6 @@ import com.vladbakharev.tmdbox.screens.GenresScreen
 import com.vladbakharev.tmdbox.screens.HomeScreen
 import com.vladbakharev.tmdbox.screens.MovieScreen
 
-
 @Composable
 fun NavigationStack() {
     val navController = rememberNavController()
@@ -24,7 +24,7 @@ fun NavigationStack() {
             route = Screen.Home.route,
             enterTransition = { fadeIn() },
         ) {
-            HomeScreen(navController = navController)
+            HomeScreen(navController = navController, viewModel = moviesViewModel)
         }
         composable(
             route = Screen.Genres.route,
@@ -34,6 +34,8 @@ fun NavigationStack() {
         }
         composable(
             route = Screen.Movie.route,
+            enterTransition = { fadeIn() },
+            exitTransition = { fadeOut() },
             arguments = listOf(navArgument("movieId") { type = NavType.IntType })
         ) {
             MovieScreen(viewModel = moviesViewModel)

@@ -9,16 +9,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.vladbakharev.tmdbox.GenresTab
+import com.vladbakharev.tmdbox.MainActivity
 import com.vladbakharev.tmdbox.MainBottomAppBar
 import com.vladbakharev.tmdbox.MainTopAppBar
 import com.vladbakharev.tmdbox.MoviesGrid
 import com.vladbakharev.tmdbox.R
 import com.vladbakharev.tmdbox.backgroundBrush
 import com.vladbakharev.tmdbox.retrofit.MoviesViewModel
+import com.vladbakharev.tmdbox.ui.theme.TMDBoxTheme
 
 @Composable
 fun GenresScreen(
@@ -58,14 +61,3 @@ fun GenresScreen(
         }
     }
 }
-
-/*@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun GenresScreenPreview() {
-    ShutterflyTMDBTheme {
-        GenresScreen(navController = NavController(MainActivity()))
-    }
-}*/

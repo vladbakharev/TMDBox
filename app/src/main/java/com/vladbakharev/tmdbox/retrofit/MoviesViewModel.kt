@@ -25,9 +25,22 @@ class MoviesViewModel : ViewModel() {
     private val _selectedMovie = MutableStateFlow<Movie?>(null)
     val selectedMovie: StateFlow<Movie?> = _selectedMovie
 
+    private val _currentPage = MutableStateFlow(1)
+
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
+
+    private val _moviesByDay = MutableStateFlow<List<Movie>>(emptyList())
+    val moviesByDay: StateFlow<List<Movie>> = _moviesByDay
+
+    private val _moviesByWeek = MutableStateFlow<List<Movie>>(emptyList())
+    val moviesByWeek: StateFlow<List<Movie>> = _moviesByWeek
+
     init {
         fetchGenres()
         fetchConfiguration()
+        fetchMoviesByDay()
+        fetchMoviesByWeek()
     }
 
     private fun fetchGenres() {
@@ -46,16 +59,24 @@ class MoviesViewModel : ViewModel() {
 
     fun setSelectedGenre(genreId: Int) {
         _selectedGenre.value = genreId
-        fetchMoviesForGenre(genreId)
+        _movies.value = emptyList()
+        _currentPage.value = 1
+        fetchMoviesForGenre(genreId, 1)
     }
 
-    private fun fetchMoviesForGenre(genreId: Int) {
+    private fun fetchMoviesForGenre(genreId: Int, page: Int) {
+        if (_isLoading.value) return
+        _isLoading.value = true
+
         viewModelScope.launch {
             try {
-                val response = TMDBApi.retrofitService.getMoviesByGenre(apiKey, genreId)
-                _movies.value = response.results
+                val response = TMDBApi.retrofitService.getMoviesByGenre(apiKey, genreId, page)
+                _movies.value += response.results
+                _currentPage.value = page
             } catch (e: Exception) {
                 e.printStackTrace()
+            } finally {
+                _isLoading.value = false
             }
         }
     }
@@ -71,7 +92,34 @@ class MoviesViewModel : ViewModel() {
         }
     }
 
+    fun loadNextPage() {
+        val genreId = _selectedGenre.value ?: return
+        fetchMoviesForGenre(genreId, _currentPage.value + 1)
+    }
+
     fun setSelectedMovie(movie: Movie) {
         _selectedMovie.value = movie
+    }
+
+    private fun fetchMoviesByDay() {
+        viewModelScope.launch {
+            try {
+                val response = TMDBApi.retrofitService.getMoviesByToday(apiKey)
+                _moviesByDay.value = response.results
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun fetchMoviesByWeek() {
+        viewModelScope.launch {
+            try {
+                val response = TMDBApi.retrofitService.getMoviesByWeek(apiKey)
+                _moviesByWeek.value = response.results
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 }

@@ -124,31 +124,27 @@ fun MovieScreen(
                 ),
                 textAlign = TextAlign.Center
             )
-            Text(
-                modifier = modifier.padding(top = 16.dp, bottom = 32.dp),
-                text = if (it.overview.isNullOrEmpty()) {
-                    stringResource(id = R.string.no_overview)
-                } else {
-                    "\t\t\t" + it.overview
-                },
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    color = Color.White
-                ),
-                textAlign = TextAlign.Justify
-            )
+            Surface(
+                modifier = modifier
+                    .padding(top = 16.dp, bottom = 32.dp)
+                    .clip(RoundedCornerShape(24.dp)),
+                color = MaterialTheme.colorScheme.primary
+            ) {
+                Text(
+                    modifier = modifier
+                        .padding(top = 16.dp, bottom = 16.dp, start = 16.dp, end = 16.dp),
+                    text = if (it.overview.isNullOrEmpty()) {
+                        stringResource(id = R.string.no_overview)
+                    } else {
+                        "\t\t\t" + it.overview
+                    },
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        color = Color.White
+                    ),
+                    textAlign = TextAlign.Justify
+                )
+            }
         }
     }
 }
-
-/*
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
-@Composable
-fun MovieScreenPreview() {
-    ShutterflyTMDBTheme {
-        MovieScreen(navController = NavController(MainActivity()))
-    }
-}*/

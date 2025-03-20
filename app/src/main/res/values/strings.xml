@@ -3,4 +3,6 @@
     <string name="home">Home</string>
     <string name="genres">Genres</string>
     <string name="no_overview">No overview</string>
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
 </resources>
